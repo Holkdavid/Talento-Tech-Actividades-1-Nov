@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif; 
+            background-color: #f0f0f0;
+            background-image: url(https://s1.abcstatics.com/media/ciencia/2021/10/29/formulas-matematicas-9-knjG-yg-kN6--1248x698@abc.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            color: #000;
+        }
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #d4af37; 
+            text-align: center;
+        }
+        .slider-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #valorSeleccionado {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #d4af37; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            transition: background-color 0.3s; 
+        }
+        button:hover {
+            background-color: #b89b2a; 
+        }
+        label {
+            font-size: 20px;
+            background-color: #d4af37;
+        }
+    </style>
+    <script>
+        function verificarSiesparoImpar() {
+            const numero = parseInt(document.getElementById('slider').value);
+            
+            if (numero % 2 === 0) {
+                alert(`El número ${numero} es Par`);
+            } else {
+                alert(`El número ${numero} es Impar`);
+            }
+        }
+
+        function actualizarValor() {
+            const valor = document.getElementById('slider').value;
+            document.getElementById('valorSeleccionado').innerText = valor;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="https://www.unilibre.edu.co/cartagena/images/Logo/ulibre_ctg_h.png" alt="Logo de la Universidad" style="max-width: 150px;">
+        <h1>Determinar número Par o Impar</h1>
+    </header>
+    <div class="page">
+        <div class="slider-container">
+            <label for="slider">Selecciona un número del 0 al 100:</label>
+            <input type="range" id="slider" min="0" max="100" oninput="actualizarValor()">
+            <div id="valorSeleccionado">0</div>
+            <button onclick="verificarSiesparoImpar()">Verificar</button>
+        </div>
+    </div>
+</body>
+</html>
