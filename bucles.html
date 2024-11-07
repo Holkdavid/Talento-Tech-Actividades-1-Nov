@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Bucles</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif; 
+            background-color: #f0f0f0;
+            background-image: url(https://s1.abcstatics.com/media/ciencia/2021/10/29/formulas-matematicas-9-knjG-yg-kN6--1248x698@abc.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            color: #000;
+        }
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #d4af37; 
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .slider-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #valorSeleccionado {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #d4af37; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            transition: background-color 0.3s; 
+        }
+        button:hover {
+            background-color: #b89b2a; 
+        }
+        label {
+            font-size: 20px;
+            background-color: #d4af37;
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Laboratorio de Bucles</h1>
+    </header>
+
+    <!-- Parte 1: Bucle 'for' -->
+    <section>
+        <h2>Parte 1: Bucle 'for'</h2>
+        <button onclick="sumarArreglo()">Calcular Suma del Arreglo</button>
+        <p id="resultadoSuma"></p>
+    </section>
+
+    <!-- Parte 2: Bucle 'while' -->
+    <section>
+        <h2>Parte 2: Bucle 'while'</h2>
+        <button onclick="ingresarNumero()">Ingresar Número</button>
+        <p id="resultadoWhile"></p>
+    </section>
+
+    <!-- Parte 3: Bucle 'do...while' -->
+    <section>
+        <h2>Parte 3: Bucle 'do...while'</h2>
+        <button onclick="pedirContrasena()">Ingresar Contraseña</button>
+        <p id="resultadoDoWhile"></p>
+    </section>
+
+    <script>
+        // Parte 1: Bucle 'for'
+        function sumarArreglo() {
+            const numeros = [1, 2, 3, 4, 5]; // Puedes cambiar los números aquí
+            let suma = 0;
+            for (let i = 0; i < numeros.length; i++) {
+                suma += numeros[i];
+            }
+            document.getElementById('resultadoSuma').innerText = "La suma total es: " + suma;
+        }
+
+        // Parte 2: Bucle 'while'
+        function ingresarNumero() {
+            let numero;
+            do {
+                numero = prompt("Ingresa un número negativo:");
+            } while (numero >= 0);
+            document.getElementById('resultadoWhile').innerText = "Número negativo ingresado: " + numero;
+        }
+
+        // Parte 3: Bucle 'do...while'
+        function pedirContrasena() {
+            const contrasenaCorrecta = "1234"; // Contraseña definida
+            let contrasena;
+            do {
+                contrasena = prompt("Ingresa la contraseña:");
+            } while (contrasena !== contrasenaCorrecta);
+            document.getElementById('resultadoDoWhile').innerText = "Contraseña correcta ingresada.";
+        }
+    </script>
+</body>
+</html>
+
